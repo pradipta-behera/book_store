@@ -20,4 +20,4 @@ const bookSchema =mongoose.Schema(
 }  
 );
 
-export const book = mongoose.model('Kitten',bookSchema );
+export const book = mongoose.model('Kitten',{name:String} );
