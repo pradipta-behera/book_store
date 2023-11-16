@@ -9,7 +9,7 @@ app.get('/',(request,response) => {
     console.log(request);
     return response.status(234).send("welcome to the book store website");
 });
- app.post('/books',async(request,response)=>{
+ app.post('/book',async(request,response)=>{
     try{
         if(
             !request.body.title||
@@ -25,7 +25,7 @@ app.get('/',(request,response) => {
             author:request.body.author,
             publishYear:request.body.publishYear,
         };
-        const book=await Book.create(newBook);
+        const book=await book.create(newBook);
         return  response.status(201).send(book);
         
     }
